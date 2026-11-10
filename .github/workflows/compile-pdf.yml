@@ -34,7 +34,6 @@ jobs:
         with:
           name: generated-pdfs
           path: |
-            **/*.pdf
             dist-pdfs/
             artifacts/pdfs/
-          if-no-files-found: warn
+          if-no-files-found: error
