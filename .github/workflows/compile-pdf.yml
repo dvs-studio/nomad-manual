@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-pdf:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout repository
@@ -30,7 +30,7 @@ jobs:
         run: npm run pdf
 
       - name: List files for debugging
-        run: find . -maxdepth 3 -not -path '*/.*' -not -path './node_modules*'
+        run: Get-ChildItem -Recurse -Depth 3
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
